@@ -1,7 +1,7 @@
 /*
  * The maindrive to run the frame and circle class.
  */
-public class CircleDemo {
+public class MainDrive {
 
 	public static void main(String[] args) {
 		
