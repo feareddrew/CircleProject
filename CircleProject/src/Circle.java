@@ -1,53 +1,42 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-
-
-public class Circle {
-
-	JButton smaller;
-	JButton bigger;
-	JFrame frame;
-	Draw draw;
+/*
+ * this class creates a circle with an initial diameter of 100
+ * and base on the size of the frame it sets the x,y position of the circle.
+ */
+public class Circle extends JPanel {
 	
-	public void Circle() // Sets the default stuff for any circle
+	private int startPointX;
+	private int startPointY;
+	private int circleDiameter;
+	
+	public Circle(int width, int height)
 	{
-		smaller = new JButton("Smaller");
-		bigger = new JButton("Bigger");
-		
-		frame = new JFrame();
-		frame.setSize(600,600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		draw = new Draw(frame.getSize().width, frame.getSize().height);
-		
-		bigger.addActionListener(new BiggerButton());
-		smaller.addActionListener(new SmallerButton());
-	}
-	
-	public void run() // Sets Where You Want The Components In The Frame
-	{
-		Circle();
-		
-		frame.add(BorderLayout.SOUTH, smaller);
-		frame.add(BorderLayout.NORTH, bigger);
-		frame.add(BorderLayout.CENTER, draw);
-		
-		frame.setVisible(true);
-	}
-	
-	public class BiggerButton implements ActionListener{ // Makes Circle Bigger by Button
-		
-		public void actionPerformed(ActionEvent event){
-			draw.enBiggen();
-		}
-	}
-	
-	public class SmallerButton implements ActionListener{ // Makes Circle Smaller by Button
-		
-		public void actionPerformed(ActionEvent event){
-			draw.enSmallen();
-		}
+		circleDiameter = 100; //set initial circle diameter
+		startPointX = (width / 2) - (circleDiameter / 2);
+		startPointY = (height / 2) - (circleDiameter / 2);
 	}
 
+	public void enSmallen() {
+		startPointX = startPointX + 10;
+		startPointY = startPointY + 10;
+		circleDiameter  = circleDiameter - 20;
+
+		repaint();
+	}
+	
+	public void enBiggen() {
+		startPointX = startPointX - 10;
+		startPointY = startPointY - 10;
+		circleDiameter = circleDiameter + 20;
+
+		repaint();
+	}
+	
+	public void paintComponent(Graphics g){
+		
+		//Sets color To Blue And Fills It
+		g.setColor(Color.blue);
+		g.fillOval(startPointX, startPointY, circleDiameter, circleDiameter);
+	}
 }
