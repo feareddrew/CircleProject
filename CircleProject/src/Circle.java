@@ -10,22 +10,24 @@ public class Circle {
 	JFrame frame;
 	Draw draw;
 	
-	public void run() 
+	public void Circle() // Sets the default stuff for any circle
 	{
-		frame = new JFrame();
-		
-		frame.setSize(600,600);
-		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		smaller = new JButton("Smaller");
 		bigger = new JButton("Bigger");
 		
-		//draw = new Draw();
+		frame = new JFrame();
+		frame.setSize(600,600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		draw = new Draw(frame.getSize().width, frame.getSize().height);
 		
-		smaller.addActionListener(new SmallerButton());
 		bigger.addActionListener(new BiggerButton());
+		smaller.addActionListener(new SmallerButton());
+	}
+	
+	public void run() // Sets Where You Want The Components In The Frame
+	{
+		Circle();
 		
 		frame.add(BorderLayout.SOUTH, smaller);
 		frame.add(BorderLayout.NORTH, bigger);
