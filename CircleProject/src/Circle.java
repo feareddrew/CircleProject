@@ -36,14 +36,14 @@ public class Circle {
 		frame.setVisible(true);
 	}
 	
-	public class BiggerButton implements ActionListener{
+	public class BiggerButton implements ActionListener{ // Makes Circle Bigger by Button
 		
 		public void actionPerformed(ActionEvent event){
 			draw.enBiggen();
 		}
 	}
 	
-	public class SmallerButton implements ActionListener{
+	public class SmallerButton implements ActionListener{ // Makes Circle Smaller by Button
 		
 		public void actionPerformed(ActionEvent event){
 			draw.enSmallen();
