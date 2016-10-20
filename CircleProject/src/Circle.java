@@ -32,7 +32,6 @@ public class Circle {
 		frame.add(BorderLayout.SOUTH, smaller);
 		frame.add(BorderLayout.NORTH, bigger);
 		frame.add(BorderLayout.CENTER, draw);
-		
 		frame.setVisible(true);
 	}
 	
