@@ -19,20 +19,12 @@ public class Draw extends JPanel {
 		startPointX = startPointX + 10;
 		startPointY = startPointY + 10;
 		circleDiameter  = circleDiameter - 20;
-
-		setVisible(false);
-		repaint();
-		setVisible(true);
 	}
 	
 	public void enBiggen() {
 		startPointX = startPointX - 10;
 		startPointY = startPointY - 10;
 		circleDiameter = circleDiameter + 20;
-
-		setVisible(false);
-		repaint();
-		setVisible(true);
 	}
 	
 	public void paintComponent(Graphics g){

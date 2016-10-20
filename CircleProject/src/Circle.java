@@ -39,6 +39,7 @@ public class Circle {
 		
 		public void actionPerformed(ActionEvent event){
 			draw.enBiggen();
+			frame.repaint();
 		}
 	}
 	
@@ -46,6 +47,7 @@ public class Circle {
 		
 		public void actionPerformed(ActionEvent event){
 			draw.enSmallen();
+			frame.repaint();
 		}
 	}
 
